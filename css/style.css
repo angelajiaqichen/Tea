@@ -1,0 +1,14 @@
+#map {
+    height: 100vh;
+    width: 100vw;
+    /* border: 3px; */
+  }
+  .land {
+    fill: #dcdcdc;
+    stroke: #ffffff;
+    stroke-width: 0.5px;
+  }
+  .marker {
+    fill: steelblue;
+  }
+  
