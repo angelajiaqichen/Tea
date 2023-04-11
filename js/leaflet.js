@@ -21,9 +21,9 @@ var points = [
 ];
 
 var greenIcon = new L.icon({
-  iconUrl: 'https://raw.githubusercontent.com/angelajiaqichen/Tea/main/img/roundicon.png',
+  iconUrl: 'https://github.com/angelajiaqichen/Tea/blob/main/img/roundicon3.png?raw=true',
   // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [25, 25],
+  iconSize: [15, 15],
   // iconAnchor: [12, 41],
   popupAnchor: [1, -34],
   // shadowSize: [41, 41]
