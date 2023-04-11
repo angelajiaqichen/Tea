@@ -23,32 +23,58 @@ var points = [
 var greenIcon = new L.icon({
   iconUrl: 'https://github.com/angelajiaqichen/Tea/blob/main/img/roundicon3.png?raw=true',
   // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-  iconSize: [15, 15],
+  iconSize: [20, 20],
   // iconAnchor: [12, 41],
   popupAnchor: [1, -34],
   // shadowSize: [41, 41]
 });
 
+// create an empty layer group
+// var markers = L.layerGroup().addTo(map);
+var marker, location;
 
 for (var i = 0; i < points.length; i++) {
+      // location = points[i][0];
       L.marker([points[i][1], points[i][2]], {icon: greenIcon}).bindPopup(points[i][0]).addTo(map);
+      // marker = L.marker([points[i][1], points[i][2]], {icon: greenIcon}).bindPopup(points[i][0]).addTo(map);
+      // console.log(points[i][0]);
+      // marker.location = location;
   }
+// marker.addEventListener('click', _markerOnClick);
 
-// Add a GeoJSON layer to the map
-const geojsonLayer = L.geoJSON(worldGeoJSON).addTo(map);
 
-// Add a click event listener to the GeoJSON layer
-geojsonLayer.on("click", function (e) {
-  const name = e.layer.feature.properties.name;
-  document.getElementById("info").innerHTML = "<h2>" + name + "</h2>";
-});
 
-// Load the world GeoJSON data
-fetch("world-110m.geojson")
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    // Add the GeoJSON data to the GeoJSON layer
-    geojsonLayer.addData(data);
-  });
+// // add a click event listener to the markers
+// function _markerOnClick(event) {
+//   console.log("Clicked on marker " + event.layer.test);
+// }
+// var _markerOnClick = function(e) {
+//   console.log("Clicked on marker " + e.layer.test);
+// };
+// markers.on('click', function(e) {
+//   console.log(e);
+//   var popupContent = e.layer.getPopup().getContent();
+//   console.log(e);
+//   document.getElementById("info_detail").innerHTML = popupContent;
+// });
+
+
+
+// // Add a GeoJSON layer to the map
+// const geojsonLayer = L.geoJSON(worldGeoJSON).addTo(map);
+
+// // Add a click event listener to the GeoJSON layer
+// geojsonLayer.on("click", function (e) {
+//   const name = e.layer.feature.properties.name;
+//   document.getElementById("info").innerHTML = "<h2>" + name + "</h2>";
+// });
+
+// // Load the world GeoJSON data
+// fetch("world-110m.geojson")
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (data) {
+//     // Add the GeoJSON data to the GeoJSON layer
+//     geojsonLayer.addData(data);
+//   });
