@@ -45,6 +45,8 @@ for (var i = 0; i < points.length; i++) {
 
 
 // // add a click event listener to the markers
+// Reference: http://jsfiddle.net/ve2huzxw/74/, https://gis.stackexchange.com/questions/172508/add-an-event-listener-on-a-marker-in-leaflet
+
 // function _markerOnClick(event) {
 //   console.log("Clicked on marker " + event.layer.test);
 // }

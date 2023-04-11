@@ -44,6 +44,11 @@ nav li a {
   margin: 10% auto;
 }
 
+.highlight {
+	color: #929239;
+  text-decoration: underline;
+}
+
 .h1 {
   font-size: 32px;
   font-weight: bold;
@@ -170,4 +175,55 @@ nav li a {
 
 #bottom_bar li a:hover {
   background-color: #ebf0c9;
+}
+
+form {
+  /* background-color: #FFFFCC; */
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0px 0px 10px #888888;
+  text-align: center;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+input[type="text"], textarea {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 5px #888888;
+  width: 90%;
+  margin-bottom: 20px;
+  background-color: #ebf0c9;
+}
+input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #929239;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #7A7A29;
+}
+footer {
+  /* background-color: #FFFFCC; */
+  padding: 25px;
+  text-align: center;
+  /* box-shadow: 0px 0px 10px #888888; */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+address {
+  font-style: normal;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
