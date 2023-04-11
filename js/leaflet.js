@@ -5,6 +5,18 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+const cityInfo = {
+  "ZANZIBAR": {
+    "pop": 1000,
+    "info": "fjksljsadkljdskljfakljfklsjalkjkldsfjklafjaskljlj",
+    "teaser_photo": "myimg/photo.png"
+  },
+  "SEATTLE": {
+    "pop": 1000,
+    "info": "fjksljsadkljdskljfakljfklsjalkjkldsfjklafjaskljlj"
+  }
+}
+
 var points = [    
   ["ZANZIBAR",-6.13, 39.31],
   ["TOKYO",35.68, 139.76],
@@ -30,12 +42,20 @@ var greenIcon = new L.icon({
 });
 
 // create an empty layer group
-// var markers = L.layerGroup().addTo(map);
+var markers = L.layerGroup().addTo(map);
 var marker, location;
+
+var selectedCity = undefined;
 
 for (var i = 0; i < points.length; i++) {
       // location = points[i][0];
-      L.marker([points[i][1], points[i][2]], {icon: greenIcon}).bindPopup(points[i][0]).addTo(map);
+      let name = points[i][0]
+      // console.log("making point for: ", name)
+      let p = L.marker([points[i][1], points[i][2]], {icon: greenIcon}).bindPopup(name)
+      
+      p.addTo(map);
+      p.addEventListener('click', () => _markerOnClick(name))
+      // p.addEventListener('click', _markerOnClick)
       // marker = L.marker([points[i][1], points[i][2]], {icon: greenIcon}).bindPopup(points[i][0]).addTo(map);
       // console.log(points[i][0]);
       // marker.location = location;
@@ -49,9 +69,17 @@ for (var i = 0; i < points.length; i++) {
 // https://gis.stackexchange.com/questions/172508/add-an-event-listener-on-a-marker-in-leaflet
 // https://tomickigrzegorz.github.io/leaflet-examples/#05.coordinates-after-clicking-on-the-map
 
-// function _markerOnClick(event) {
-//   console.log("Clicked on marker " + event.layer.test);
-// }
+function _markerOnClick(title) {
+  console.log("Clicked on marker ", title);
+  selectedCity = title
+
+  // updatedata()
+
+  // access city info in dict
+  const myInfo = cityInfo[title]
+
+  console.log(myInfo)
+}
 // var _markerOnClick = function(e) {
 //   console.log("Clicked on marker " + e.layer.test);
 // };
