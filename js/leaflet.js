@@ -8,12 +8,12 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const cityInfo = {
   "ZANZIBAR": {
     "pop": 1000,
-    "info": "fjksljsadkljdskljfakljfklsjalkjkldsfjklafjaskljlj",
+    "overview": "fjksljsadkljdskljfakljfklsjalkjkldsfjklafjaskljlj",
     "teaser_photo": "myimg/photo.png"
   },
   "SEATTLE": {
     "pop": 1000,
-    "info": "fjksljsadkljdskljfakljfklsjalkjkldsfjklafjaskljlj"
+    "overview": "fjksljsadkljdskljfakljfklsjalkjkldsfjklafjaskljlj"
   }
 }
 
@@ -43,25 +43,16 @@ var greenIcon = new L.icon({
 
 // create an empty layer group
 var markers = L.layerGroup().addTo(map);
-var marker, location;
 
 var selectedCity = undefined;
 
-for (var i = 0; i < points.length; i++) {
-      // location = points[i][0];
-      let name = points[i][0]
-      // console.log("making point for: ", name)
-      let p = L.marker([points[i][1], points[i][2]], {icon: greenIcon}).bindPopup(name)
-      
-      p.addTo(map);
-      p.addEventListener('click', () => _markerOnClick(name))
-      // p.addEventListener('click', _markerOnClick)
-      // marker = L.marker([points[i][1], points[i][2]], {icon: greenIcon}).bindPopup(points[i][0]).addTo(map);
-      // console.log(points[i][0]);
-      // marker.location = location;
-  }
-// marker.addEventListener('click', _markerOnClick);
 
+for (var i = 0; i < points.length; i++) { // create each location marker
+  let name = points[i][0]
+  let p = L.marker([points[i][1], points[i][2]], {icon: greenIcon}).bindPopup(name)
+  p.addTo(map);
+  p.addEventListener('click', () => _markerOnClick(name))
+}
 
 
 // // add a click event listener to the markers
@@ -79,17 +70,8 @@ function _markerOnClick(title) {
   const myInfo = cityInfo[title]
 
   console.log(myInfo)
+  document.getElementById("info_detail").innerHTML = myInfo.overview;
 }
-// var _markerOnClick = function(e) {
-//   console.log("Clicked on marker " + e.layer.test);
-// };
-// markers.on('click', function(e) {
-//   console.log(e);
-//   var popupContent = e.layer.getPopup().getContent();
-//   console.log(e);
-//   document.getElementById("info_detail").innerHTML = popupContent;
-// });
-
 
 
 // // Add a GeoJSON layer to the map
