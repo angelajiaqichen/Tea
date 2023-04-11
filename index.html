@@ -12,10 +12,13 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
       integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
       crossorigin=""></script>
+    <link href="https://fonts.googleapis.com/css?family=Sora" rel="stylesheet">
+    <script src="./js/app.js"></script>
     
   </head>
 
   <body>
+    <!-- top navigation bar -->
     <nav>
       <div class="left">
         <h1>World of Tea</h1>
@@ -28,15 +31,17 @@
         </ul>
       </div>
     </nav>
-    <div id="map-container">
-      <div class="h1">
-        Tea Culture Around the World
+
+    <div id="content">
+      <div id="map-container">
+        <div class="h1">
+          Tea Culture Around the World
+        </div>
+        <div class="tiny_text">
+          Click on a region on the map to explore the history, culture, and types of tea in the area.
+        </div>
+        <div id="map"></div>
       </div>
-      <div class="normal_text">
-        Click on a region on the map to explore the history, culture, and types of tea in the area.
-      </div>
-      <div id="map"></div>
-    </div>
       
       <div id="info">
         <div class="info_tab_bar">
@@ -45,15 +50,28 @@
           </div>
           <div class="info_tabs">
             <ul>
-              <li><a href="#overview">Overview</a></li>
+              <li class="active_tab"><a href="#overview">Overview</a></li>
               <li><a href="#history">History</a></li>
               <li><a href="#culture">Culture</a></li>
+              <li><a href="#culture">Tea Types</a></li>
             </ul>
           </div>
-          
         </div>
-
+        <div class="info_detail">
+          Brazilian tea culture has its origins in the infused beverages, or chás (Portuguese pronunciation: [ʃas]), made by the indigenous cultures of the Amazon region and the Rio da Prata basin. It has evolved since the Portuguese colonial period to include imported varieties and tea-drinking customs. There is a popular belief in Brazil that Brazilians, especially the urban ones, have a greater taste for using sugar in teas than in other cultures, being unused to unsweetened drinks.
+          <br><br><br><br><br>
+        </div>
       </div>
+
+      <div id="bottom_bar">
+        <ul>
+          <li><a href="https://github.com/angelajiaqichen/Tea">Source Code</a></li>
+          <li><a href="https://www.linkedin.com/angelajiaqichen/">LinkedIn</a></li>
+          <li><a href="https://github.com/angelajiaqichen/">GitHub</a></li>
+        </ul>
+      </div>
+      
+    </div>
     
     <!-- my own js has to go here (!don't move it to head!) or else the map won't work-->
     <script src="./js/leaflet.js"></script>

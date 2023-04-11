@@ -1,50 +1,173 @@
 body {
     margin: 0;
     padding: 0;
-  }
+    font-family: 'Sora', sans-serif;
+    font-size: 18px;
+    /* font-weight: 100px; */
+    background-color: #E0E0AF;
+}
   
-  nav {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-  }
+    /* background-color: #333; */
+    color: #929239;
+    padding: 15px 10%;
+    border-bottom: 1px solid #696929;
+    font-size: 16px;
+}
   
-  nav h1 {
+nav h1 {
     margin: 0;
-  }
-  
-  nav ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  nav li {
-    list-style: none;
-    margin-left: 10px;
-  }
-  
-  nav li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  #map-container {
-    position: relative;
-  }
-  
-  #map { 
-    height: 180px; 
-  }
-  
-  #info {
-    /* position: absolute;
-    bottom: 10px;
-    left: 10px; */
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-  }
-  
+    font-weight: bold;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  list-style: none;
+  margin-left: 10px;
+}
+
+nav li a {
+  color: #696929;
+  text-decoration: none;
+}
+/* this is not working */
+.content {
+  width: 80%;
+  margin: 10% auto;
+}
+
+.h1 {
+  font-size: 32px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  color: #929239;
+}
+
+.tiny_text {
+  color: #343414;
+  padding-bottom: 15px;
+  font-size: 14px;
+}
+
+#map-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+#map { 
+  position: relative;
+  height: 500px; 
+  margin: auto;
+  border: 3px;
+}
+
+#info {
+  /* position: absolute;
+  bottom: 10px;
+  left: 10px; */
+  padding-top: 30px;
+  width: 80%;
+  margin: auto;
+}
+
+#info .info_tab_bar {
+  display: flex;
+  align-items: center;
+  color: #696929;
+}
+
+.info_title {
+  display: inline-block;
+  font-size: 32px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.info_tabs {
+  margin-left: auto;
+  font-size: 22px;
+}
+
+.info_tabs ul {
+  list-style: none;
+  display: inline-block;
+}
+
+.info_tabs ul li {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+.info_tabs ul li a {
+  display: block;
+  padding: 5px 10px;
+  color: #696929;
+  /* text-decoration: none; */
+  border-radius: 5px;
+}
+
+.info_tabs ul li a:hover {
+  background-color: #ebf0c9;
+}
+
+/* only change the font color of the active/selected tab when it is clicked or visited */
+.info_tabs li a:active {
+  color: #929239;
+  text-decoration: underline;
+}
+
+/* change the color of the default/initially selected tab */
+.info_tabs li.active_tab a {
+  color: #929239;
+  text-decoration: underline;
+}
+
+.info_detail {
+  padding: 10px;
+}
+
+#bottom_bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+
+#bottom_bar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  height: 100%;
+  width: 50%;
+}
+
+#bottom_bar li {
+  flex: 1;
+  font-size: 16px;
+  text-align: center;
+}
+
+#bottom_bar li a {
+  color: #696929;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+#bottom_bar li a:hover {
+  background-color: #ebf0c9;
+}
