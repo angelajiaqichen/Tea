@@ -5,15 +5,10 @@
 
   <head>
     <title>World of Tea</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-      crossorigin=""/>
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-      crossorigin=""></script>
+    <link rel="stylesheet" href="./css/game.css" />
     <link href="https://fonts.googleapis.com/css?family=Sora" rel="stylesheet">
-    <script src="./js/app.js"></script>
+    
     
   </head>
 
@@ -33,14 +28,18 @@
     </nav>
 
     <div class="content">
-        <hr>
-        <br><br><br>
-        <h1>About World of Tea</h1>
-        <p>World of Tea is a website dedicated to exploring the diverse cultures and traditions surrounding the production and consumption of tea around the world. Our mission is to educate and inform tea lovers and enthusiasts alike about the history, varieties, and health benefits of tea.</p>
-        <a href="game.html">Game</a>
-        
-        <h3>Contact Us</h3>
-        <p>Have questions, comments, or suggestions for World of Tea? We'd love to hear from you! Please feel free to contact us using the form on our <a href="contact.html">contact page</a>.</p>
+        <div class="game-container">
+            <h2>Tea Trivia Game</h2>
+            <p id="question">question</p>
+            <div id="options-container">
+              <button class="option" onclick="checkAnswer(this)">answer1</button>
+              <button class="option" onclick="checkAnswer(this)">answer2</button>
+              <button class="option" onclick="checkAnswer(this)">answer3</button>
+              <button class="option" onclick="checkAnswer(this)">answer4</button>
+            </div>
+            <p id="score"></p>
+            <button id="reset" onclick="resetGame()">Start Over</button>
+        </div>
     </div>
 
       <footer>
@@ -55,7 +54,7 @@
       </footer>
       
 
-    
+      <script type="text/javascript" src="./js/app.js"></script>
 
   </body>
 
