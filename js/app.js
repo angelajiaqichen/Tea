@@ -168,6 +168,7 @@ const allQuestions = [
     questionElement.innerText = "Game Over! You scored " + score + " out of " + questions.length + " points." + " \n Do you want to play again?";
     optionsContainer.innerHTML = "";
     scoreElement.innerText = "";
+    imageElement.style.display = "none"; // hide the image container
   }
   
 //   function resetGame() {
