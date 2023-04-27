@@ -43,8 +43,17 @@ const questions = [
   
 //   const questionElement = document.getElementById("question");
   const questionElement = document.querySelector("#question");
-  const optionsContainer = document.getElementById("options-container");
+  const optionsContainer = document.querySelector("#options-container");
+//   console.log(optionsContainer.options)
+//   console.log(document.querySelector(".option"))
+//   console.log(document.querySelector("#reset"))
   const scoreElement = document.getElementById("score");
+//   var selected = "";
+//   console.log(op1.innerText)
+//   op1.addEventListener("click", () => {
+//     selected = op1.innerText;
+//     console.log(selected);
+//   })
   
   function showQuestion() {
     // console.log(currentQuestion)
@@ -56,15 +65,18 @@ const questions = [
       optionButton.classList.add("option");
       optionButton.innerText = questions[currentQuestion].options[i];
       optionsContainer.appendChild(optionButton);
+      optionButton.addEventListener("click", () => checkAnswer(optionButton));
     }
   }
   
   function checkAnswer(selectedButton) {
     console.log(questions[currentQuestion].answer)
     console.log(selectedButton.innerText)
-    if (selectedButton.innerText === questions[currentQuestion].answer) {
+    if (selectedButton.innerText == questions[currentQuestion].answer) {
       score++;
     }
+    console.log(score)
+    scoreElement.innerText = "Score: " + score;
     currentQuestion++;
     if (currentQuestion >= questions.length) {
       endGame();
@@ -80,11 +92,11 @@ const questions = [
   }
   
   function resetGame() {
+    console.log("restarted the game")
     currentQuestion = 0;
     score = 0;
     showQuestion();
     scoreElement.innerText = "Score: " + score;
   }
-  currentQuestion = 0;
   showQuestion();
   scoreElement.innerText = "Score: " + score;

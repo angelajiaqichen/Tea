@@ -5,10 +5,10 @@
   }
   
   .option {
-    background-color: #d6e9c6;
-    border: 2px solid #3c763d;
+    background-color: #d9d990;
+    border: 2px solid #929239;
     border-radius: 5px;
-    color: #3c763d;
+    color: #343414;
     font-size: 16px;
     margin: 10px;
     padding: 10px 20px;
@@ -16,7 +16,7 @@
   
   .option:hover {
     cursor: pointer;
-    background-color: #3c763d;
+    background-color: #929239;
     color: #fff;
   }
   
@@ -27,7 +27,7 @@
   }
   
   #reset {
-    background-color: #d9534f;
+    background-color: #696929;
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -38,5 +38,5 @@
   
   #reset:hover {
     cursor: pointer;
-    background-color: #c9302c;
+    background-color: #343414;
   }

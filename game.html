@@ -32,10 +32,11 @@
             <h2>Tea Trivia Game</h2>
             <p id="question">question</p>
             <div id="options-container">
-              <button class="option" onclick="checkAnswer(this)">answer1</button>
-              <button class="option" onclick="checkAnswer(this)">answer2</button>
-              <button class="option" onclick="checkAnswer(this)">answer3</button>
-              <button class="option" onclick="checkAnswer(this)">answer4</button>
+              <button class="option" onclick="checkAnswer(this)" id="op1">answer1</button>
+              <!-- <button class="option" onclick="" id="op1">answer1</button> -->
+              <button class="option" onclick="checkAnswer(this)" id="op2">answer2</button>
+              <button class="option" onclick="checkAnswer(this)" id="op3">answer3</button>
+              <button class="option" onclick="checkAnswer(this)" id="op4">answer4</button>
             </div>
             <p id="score"></p>
             <button id="reset" onclick="resetGame()">Start Over</button>
