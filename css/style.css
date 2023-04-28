@@ -7,6 +7,10 @@ body {
   background-color: #E0E0AF;
 }
 
+p {
+  font-size: 18px;
+}
+
 hr {
   margin-top: 0;
   padding-top: 0;
