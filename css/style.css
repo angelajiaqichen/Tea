@@ -81,14 +81,15 @@ h1 {
   position: relative;
   width: 80%;
   margin: auto;
-  padding-top: 15px;
+  /* padding-top: 15px; */
+  border: 15px solid #cece9a;
+  border-radius: 20px;
 }
 
 #map { 
   position: relative;
   height: 540px; 
   margin: auto;
-  border: 3px;
 }
 
 #info {
