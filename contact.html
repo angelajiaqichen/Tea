@@ -21,13 +21,13 @@
     <!-- top navigation bar -->
     <nav>
       <div class="left">
-        <h1>World of Tea</h1>
+        <h1><a href="index.html" alt="Home Page">World of Tea</a></h1>
       </div>
       <div class="right">
         <ul>
-          <li><a href="index.html">Map</a></li>
-          <li><a href="game.html">Game</a></li>
-          <li><a href="#"><span class="highlight">About</span></a></li>
+          <li><a href="index.html" alt="Home Page (Map)">Map</a></li>
+          <li><a href="game.html" alt="Tea Trivia Game">Game</a></li>
+          <li><a href="#" alt="About The Website"><span class="highlight">About</span></a></li>
         </ul>
       </div>
     </nav>
@@ -35,8 +35,8 @@
     <div class="content">
       <hr>
       <h1>Contact Us</h1>
-      <p>Have a question or comment? Fill out the form below to get in touch.</p><br>
-      <form>
+      <p>Have a question or comment? Fill out the form below to get in touch. (No questions? Take me back to <a href="about.html">About Page</a>!)</p><br>
+      <form id="contact-form" action="mailto:jiaqiche@andrew.cmu.edu" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <label for="email">Email:</label>
@@ -45,19 +45,11 @@
         <input type="text" id="subject" name="subject" required>
         <label for="message">Message:</label>
         <textarea id="message" name="message" required></textarea>
-        <button type="submit">Send Message</button>
+        <button id="form-button" type="submit" value="Submit" title="Click to submit the form">Send Message</button>
       </form>
-      <p>Back to <a href="about.html">About Page</a></p>
-      <br><br><br>
         
 
-      <!-- <div id="bottom_bar">
-        <ul>
-          <li><a href="https://github.com/angelajiaqichen/Tea">Source Code</a></li>
-          <li><a href="https://www.linkedin.com/angelajiaqichen/">LinkedIn</a></li>
-          <li><a href="https://github.com/angelajiaqichen/">GitHub</a></li>
-        </ul>
-      </div> -->
+      
 
       <footer>
         <hr>
