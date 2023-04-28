@@ -3,6 +3,14 @@
     margin: 0 auto;
     text-align: center;
 }
+
+.game-container p{
+    font-size: 20px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+}
   
   .option {
     background-color: #d9d990;
@@ -26,7 +34,7 @@
     margin-top: 20px;
   }
   
-  #reset {
+  .game-button {
     background-color: #696929;
     border: none;
     border-radius: 5px;
@@ -36,7 +44,7 @@
     padding: 10px 20px;
   }
   
-  #reset:hover {
+  .game-button:hover {
     cursor: pointer;
     background-color: #343414;
   }

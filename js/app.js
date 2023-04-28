@@ -183,6 +183,10 @@ const allQuestions = [
 //     scoreElement.innerText = "Score: " + score;
 //   }
 
+function startGame() {
+    window.location.href = "game.html";
+}
+
   function resetGame() {
     window.location.reload();
   }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trivia Game Splash Screen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      /* Add styles for the splash screen here */
+      body {
+        background-color: #ffffff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      h1 {
+        font-size: 48px;
+        color: #000000;
+        margin-top: 100px;
+      }
+      button {
+        font-size: 24px;
+        background-color: #008CBA;
+        color: #ffffff;
+        border: none;
+        padding: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 50px;
+      }
+      button:hover {
+        background-color: #005F6B;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to the Trivia Game!</h1>
+    <button onclick="startGame()">Start Game</button>
+    <script>
+      function startGame() {
+        window.location.href = "game.html";
+      }
+    </script>
+  </body>
+</html>
