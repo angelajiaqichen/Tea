@@ -1,5 +1,5 @@
-var map = L.map('map').setView([30, 18], 2);
-
+var map = L.map('map').setView([30, 10], 2);
+map.scrollWheelZoom.disable();
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'

@@ -83,7 +83,8 @@ h1 {
 
 #map-container {
   position: relative;
-  width: 80%;
+  /* width: 80%; */
+  width: 1024px;
   margin: auto;
   /* padding-top: 15px; */
   border: 15px solid #cece9a;
