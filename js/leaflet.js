@@ -232,7 +232,7 @@ var greenIcon = new L.icon({
 // create an empty layer group
 var markers = L.layerGroup().addTo(map);
 
-var selectedCity = undefined;
+var selectedCountry = undefined;
 
 
 for (var i = 0; i < points.length; i++) { // create each location marker
@@ -249,16 +249,18 @@ for (var i = 0; i < points.length; i++) { // create each location marker
 // https://tomickigrzegorz.github.io/leaflet-examples/#05.coordinates-after-clicking-on-the-map
 
 function _markerOnClick(title) {
-  console.log("Clicked on marker ", title);
-  selectedCity = title
+  console.log("Clicked on marker: ", title);
+  selectedCountry = title
 
   // updatedata()
 
   // access city info in dict
-  const myInfo = cityInfo[title]
+  const myInfo = teaInfo[selectedCountry]
 
-  console.log(myInfo)
+  var country_title = myInfo.title
+  console.log(country_title)
   document.getElementById("info_detail").innerHTML = myInfo.overview;
+  document.getElementById("info_title").innerText = country_title;
 }
 
 
