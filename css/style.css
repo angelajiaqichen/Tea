@@ -1,3 +1,4 @@
+/* Base styles */
 body {
   margin: 0;
   padding: 0;
@@ -310,4 +311,37 @@ address {
   height: 20px;
   display: inline-block;
   margin-right: 5px;
+}
+
+
+/* Media query for screens 1200px or larger */
+@media (min-width: 1200px) {
+  #map-container {
+    width: 940px;
+    margin: auto;
+    border-radius: 20px;
+  }
+}
+
+/* Media query for screens 768px or larger */
+@media (min-width: 768px) and (max-width: 1199px) {
+  #map-container {
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+  }
+  #landing_h1 {
+    font-size: 56px;
+    margin-bottom: 90px;
+  }
+  
+  #landing_p {
+    font-size: 22px;
+    margin-bottom: 80px;
+  }
+
+  .info_tabs ul li {
+    display: inline-block;
+    margin-left: 5px;
+  }
 }

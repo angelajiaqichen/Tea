@@ -68,3 +68,10 @@ ul {
   text-align: left;
 
 }
+
+/* Media query for screens 768px or larger */
+@media (min-width: 768px) and (max-width: 1199px) {
+  ul {
+    margin-left: 40px;
+  }
+}
