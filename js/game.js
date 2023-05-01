@@ -92,7 +92,7 @@ const allQuestions = [
   ];
 
   function getRandomQuestions(numQuestions) {
-    // Shuffle the questions array using Fisher-Yates shuffle algorithm
+    // Shuffle the questions array using "Fisher-Yates shuffle algorithm"
     for (let i = allQuestions.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
