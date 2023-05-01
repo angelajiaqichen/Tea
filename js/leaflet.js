@@ -1,7 +1,15 @@
-var map = L.map('map').setView([22, 18], 1.95);
+// config map
+let config = {
+  minZoom: 1.9,
+  maxZoom: 6,
+};
+// magnification with which the map will start
+const zoom = 1.95;
+
+var map = L.map('map', config).setView([22, 18], zoom);
 map.scrollWheelZoom.disable();
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 6,
     // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
