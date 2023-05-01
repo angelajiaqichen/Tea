@@ -324,11 +324,21 @@ legend.addTo(map);
 // MARKERS FOR TEA TYPE
 const colorMarkerLayer = L.layerGroup();
 const color_markers = [
-  [35.86, 104.16],
-  [52.258071, 20.986805],
-  [52.242728, 21.041565],
-  [52.234213, 21.029034],
-  [52.251661, 21.003456],
+  // black
+  [26.2006, 92.9376],
+  [23.8143, 87.9799], 
+  [24.1765, 113.4169],
+  // oolong
+  [27.9526, 118.0353],
+  [24.9255, 118.1835],
+  // green 
+  [32.1026, 76.2661],
+  [30.2741, 120.1551],
+  [29.7147, 118.3371],
+  // white
+  [27.0417, 88.2636], 
+  [11.4918, 76.7099],
+  [27.3252, 118.1525]
 ];
 
 // the function creates colorful svg
@@ -342,7 +352,7 @@ function colorMarker(color) {
   const icon = L.divIcon({
     className: "marker",
     html: svgTemplate,
-    iconSize: [20, 20],
+    iconSize: [25, 25],
     iconAnchor: [12, 24],
     popupAnchor: [7, -16]
   });
@@ -353,16 +363,26 @@ function colorMarker(color) {
 // add color_markers to the map
 map.on("zoomend", function () {
   const zoomLevel = map.getZoom();
-  console.log(zoomLevel)
+  // console.log(zoomLevel)
+  var color_index = 3;
   // if (zoomLevel > 2) {
     color_markers.map((marker, index) => {
       const lat = marker[0];
       const lng = marker[1];
       if (zoomLevel > 2) {
+        if (index < 3) {
+          color_index = 0;
+        } else if (index >= 3 && index < 5) {
+          color_index = 1;
+        } else if (index >= 5 && index < 8) {
+          color_index = 2;
+        } else {
+          color_index = 3;
+        }
         L.marker([lat, lng], {
-          icon: colorMarker(color[index]),
+          icon: colorMarker(color[color_index]),
         })
-          .bindPopup(`${label[index]}`)
+          .bindPopup(`${label[color_index]}`)
           .addTo(map);
       }
     });
