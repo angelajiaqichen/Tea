@@ -1,4 +1,4 @@
-var map = L.map('map').setView([30, 10], 2);
+var map = L.map('map').setView([22, 18], 1.95);
 map.scrollWheelZoom.disable();
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,

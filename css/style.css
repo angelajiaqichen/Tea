@@ -103,7 +103,7 @@ h1 {
 #map-container {
   position: relative;
   /* width: 80%; */
-  width: 1024px;
+  width: 940px;
   margin: auto;
   /* padding-top: 15px; */
   border: 15px solid #cece9a;
@@ -112,7 +112,7 @@ h1 {
 
 #map { 
   position: relative;
-  height: 560px; 
+  height: 500px; 
   margin: auto;
 }
 
@@ -150,7 +150,7 @@ h1 {
 
 .info_tabs ul li {
   display: inline-block;
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
 .info_tabs ul li a {
