@@ -86,6 +86,7 @@ nav li a {
   margin: 3% auto;
   margin-bottom: 0;
   color: #343414;
+  /* min-height: 620px; */
 }
 
 .highlight {
