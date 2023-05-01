@@ -54,7 +54,7 @@ nav li {
 }
 
 nav li a {
-  color: #696929;
+  color: #7F7F1E;
   text-decoration: none;
 }
 
@@ -92,7 +92,7 @@ nav li a {
 }
 
 .highlight {
-	color: #7F7F1E;
+	/* color: #7F7F1E; */
   text-decoration: underline;
 }
 
@@ -229,7 +229,7 @@ h1 {
 }
 
 #bottom_bar li a {
-  color: #696929;
+  color: #4C4C1E;
   text-decoration: none;
   padding: 10px;
   display: block;
@@ -267,12 +267,8 @@ input[type="text"], textarea {
 }
 
 footer {
-  /* padding: 25px; */
   text-align: center;
-  /* position: fixed; */
-  /* bottom: 0; */
   width: 100%;
-  /* height: 30px; */
 }
 
 address {
