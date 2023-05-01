@@ -39,7 +39,7 @@ const teaInfo = {
     "history": "Tea was introduced to South Africa in the 17th century by Dutch colonizers, who brought with them tea bushes from their colonies in Asia. However, the industry did not take off until the 19th century, when British immigrants began cultivating tea in the country's high-altitude regions. Today, South Africa is known for its rooibos tea, a caffeine-free herbal infusion made from the leaves of the Aspalathus linearis plant.",
     "culture": "Rooibos tea drinking is an important part of South African social culture, with rooibos traditionally served as a hot or cold beverage with milk and sugar. South African tea culture has been influenced by the country's indigenous people, who have used rooibos for centuries as a medicinal herb, as well as by Dutch and British colonizers who brought with them the tradition of tea-drinking. Today, South African tea culture is a unique blend of indigenous, Dutch, and British influences.",
     "types": "South Africa is known for its rooibos tea, which is typically consumed as a hot or cold infusion. Rooibos tea is caffeine-free and is often flavored with herbs such as cinnamon, vanilla, and honeybush. In addition to rooibos tea, South Africa also produces honeybush tea, another caffeine-free herbal infusion.",
-    "teaser_photo": "img/south-africa.png"
+    "teaser_photo": "img/rooibos.png"
     },
     
     "Kenya": {
@@ -93,7 +93,7 @@ const teaInfo = {
     "history": "Tea has been grown in India for thousands of years, with references to tea-drinking dating back to ancient texts. However, the modern Indian tea industry was established in the 19th century by British colonizers, who saw the country's climate and soil as ideal for tea cultivation. The industry grew rapidly, and by the mid-20th century, India had become one of the world's leading tea producers. Today, India is known for its high-quality black teas, which are prized for their strong flavor and aroma.",
     "culture": "Tea drinking is an integral part of Indian culture, with tea traditionally served in a communal setting with milk and sugar. Indian tea culture has been influenced by the country's indigenous people, who have used medicinal plants for centuries, as well as by British colonizers and Chinese traders who brought with them the tradition of tea-drinking. Today, Indian tea culture is a unique blend of indigenous, British, and Chinese influences.",
     "types": "India is known for its diverse tea types, including black, green, white, and oolong teas. The most famous Indian tea is Darjeeling, a black tea grown in the Darjeeling district of West Bengal. India also produces a variety of spiced teas, such as masala chai, which is made with black tea, milk, and a blend of spices including cardamom, cinnamon, and ginger.",
-    "teaser_photo": "img/india.png"
+    "teaser_photo": "img/darjeeling.png"
     },
 
     "Nepal": {
@@ -111,7 +111,7 @@ const teaInfo = {
     "history": "Tea has been grown in China for thousands of years, with references to tea-drinking dating back to ancient texts. The tea industry reached its height during the Tang dynasty (618-907 AD), when tea became a symbol of wealth and status. Today, China is known for its high-quality green teas, which are prized for their delicate flavor and aroma.",
     "culture": "Tea drinking is an integral part of Chinese culture, with tea ceremonies and rituals dating back to ancient times. Chinese tea culture has been influenced by Buddhist monks, who introduced the concept of tea as a spiritual practice, as well as by imperial dynasties, who developed elaborate tea ceremonies and rituals. Today, Chinese tea culture is a unique blend of ancient traditions and modern innovations.",
     "types": "China is known for its diverse tea types, including green, black, white, yellow, and oolong teas. The most famous Chinese teas include Longjing (Dragonwell), a green tea from Hangzhou, and Keemun, a black tea from Anhui. China also produces a variety of scented teas, such as jasmine and rose, as well as herbal infusions, such as chrysanthemum and honeysuckle.",
-    "teaser_photo": "img/china.png"
+    "teaser_photo": "img/chinesetea.png"
     },
     
     "South Korea": {
@@ -129,7 +129,7 @@ const teaInfo = {
     "history": "Tea was introduced to Japan in the 9th century by Buddhist monks, who saw tea as a way to promote meditation and mindfulness. The tea industry reached its height during the Edo period (1603-1868), when tea ceremonies became an important part of samurai culture. Today, Japan is known for its high-quality green teas, which are prized for their fresh, grassy flavor and aroma.",
     "culture": "Tea drinking is an integral part of Japanese culture, with tea ceremonies and rituals playing an important role in traditional Japanese life. Japanese tea culture has been influenced by Buddhist monks, who introduced the concept of tea as a spiritual practice, as well as by samurai warriors, who developed elaborate tea ceremonies and rituals. Today, Japanese tea culture is a unique blend of ancient traditions and modern innovations.",
     "types": "Japan is known for its high-quality green teas, including sencha, gyokuro, and matcha. Sencha is the most popular Japanese tea and has a fresh, grassy flavor. Gyokuro is a premium tea that is shaded before harvesting, giving it a rich, umami flavor. Matcha is a powdered green tea that is used in traditional tea ceremonies. Japan also produces a variety of scented teas, such as jasmine and cherry blossom, as well as herbal infusions, such as roasted barley tea.",
-    "teaser_photo": "img/japan.png"
+    "teaser_photo": "img/matcha2.png"
     },
     
     "Vietnam": {
@@ -156,7 +156,7 @@ const teaInfo = {
     "history": "Tea was introduced to Sri Lanka in the 19th century by British colonizers, who saw the country's high-altitude regions as ideal for tea cultivation. The industry grew rapidly, and by the early 20th century, tea had become one of Sri Lanka's leading agricultural exports. Today, Sri Lanka is the world's fourth-largest tea producer.",
     "culture": "Tea drinking is an important part of Sri Lankan social culture, with tea traditionally served in a communal setting with family and friends. Sri Lankan tea culture has been influenced by the country's colonial past, as well as by its indigenous people, who have used herbal teas for centuries. Today, Sri Lankan tea culture is a unique blend of ancient traditions and modern innovations.",
     "types": "Sri Lanka is known for its high-quality black teas, which are grown in the country's high-altitude regions. The most famous Sri Lankan tea is Ceylon tea, which has a bold, full-bodied flavor. Sri Lanka also produces green teas, white teas, and oolong teas, as well as a variety of herbal infusions, such as cinnamon and cardamom.",
-    "teaser_photo": "img/sri_lanka.png"
+    "teaser_photo": "img/ceylon.png"
     },
     
     "New Zealand": {
@@ -257,10 +257,12 @@ function _markerOnClick(title) {
   // access city info in dict
   const myInfo = teaInfo[selectedCountry]
 
-  var country_title = myInfo.title
-  console.log(country_title)
+  // var country_title = myInfo.title
+  // console.log(country_title)
   document.getElementById("info_detail").innerHTML = myInfo.overview;
-  document.getElementById("info_title").innerText = country_title;
+  document.getElementById("info_title").innerText = myInfo.title;
+  document.getElementById("info_image").src = myInfo.teaser_photo;
+  console.log(myInfo.teaser_photo)
 }
 
 

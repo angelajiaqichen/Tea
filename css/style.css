@@ -159,9 +159,27 @@ h1 {
   text-decoration: underline;
 }
 
-#info_detail {
+.info_flex {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.info_text {
   padding: 10px;
   font-size: 20px;
+  flex: 1;
+}
+
+.info_image_container {
+  flex: 0 0 auto;
+}
+
+#info_image {
+  max-width: 300px; 
+  border: 10px solid #cece9a; 
+  border-radius: 10px; 
+  margin: 15px 10px; 
 }
 
 #bottom_bar {
