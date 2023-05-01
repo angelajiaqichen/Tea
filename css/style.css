@@ -5,6 +5,7 @@ body {
   font-size: 16px;
   /* font-weight: 100px; */
   background-color: #E0E0AF;
+  overflow-x: hidden;
 }
 
 p {
@@ -112,11 +113,11 @@ h1 {
   color: #696929;
 }
 
-.info_title {
+#info_title {
   display: inline-block;
   font-size: 32px;
   font-weight: bold;
-  margin-right: 20px;
+  margin-right: 8px;
 }
 
 .info_tabs {
@@ -160,6 +161,7 @@ h1 {
 
 #info_detail {
   padding: 10px;
+  font-size: 20px;
 }
 
 #bottom_bar {
@@ -226,10 +228,10 @@ input[type="text"], textarea {
 }
 
 footer {
-  padding: 25px;
+  /* padding: 25px; */
   text-align: center;
   /* position: fixed; */
-  bottom: 0;
+  /* bottom: 0; */
   width: 100%;
   /* height: 30px; */
 }
