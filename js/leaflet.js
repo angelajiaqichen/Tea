@@ -10,6 +10,8 @@ var map = L.map('map', config).setView([22, 18], zoom);
 map.scrollWheelZoom.disable();
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 6,
+    // add alt text to the image
+    alt: 'Map overlay image'
     // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
@@ -237,15 +239,14 @@ var greenIcon = new L.icon({
   // shadowSize: [41, 41]
 });
 
-// create an empty layer group
-var markers = L.layerGroup().addTo(map);
 
 var selectedCountry = "Brazil";
 
 
 for (var i = 0; i < points.length; i++) { // create each location marker
   let name = points[i][0]
-  let p = L.marker([points[i][1], points[i][2]], {icon: greenIcon}).bindPopup(name)
+  let p = L.marker([points[i][1], points[i][2]], {icon: greenIcon,// add alt text to the image
+  alt: 'Map overlay image'}).bindPopup(name)
   p.addTo(map);
   p.addEventListener('click', () => _markerOnClick(name))
 }
@@ -381,7 +382,8 @@ map.on("zoomend", function () {
           color_index = 3;
         }
         L.marker([lat, lng], {
-          icon: colorMarker(color[color_index]),
+          icon: colorMarker(color[color_index]),// add alt text to the image
+          alt: 'Map overlay image'
         })
           .bindPopup(`${label[color_index]}`)
           .addTo(map);
