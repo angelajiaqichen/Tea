@@ -1,3 +1,4 @@
+// dictionary of questions and answers for the game
 const allQuestions = [
     {
       question: "Which country is famous for its tea ceremony called 'Matcha'?",
@@ -107,16 +108,14 @@ let currentQuestion = 0;
 let score = 0;
 let incorrectAnswers = []; // initialize an array to store the incorrect answers
 
-//   const questionElement = document.getElementById("question");
+
 const questionElement = document.querySelector("#question");
 const optionsContainer = document.querySelector("#options-container");
 const imageElement = document.querySelector("#question-image");
 const scoreElement = document.getElementById("score");
 
-
+// display a question
 function showQuestion() {
-  // console.log(currentQuestion)
-  // console.log(questions[currentQuestion].question)
   questionElement.innerText = questions[currentQuestion].question; // set the question text
   imageElement.src = questions[currentQuestion].image;
   optionsContainer.innerHTML = ""; // clear the options container
@@ -129,6 +128,7 @@ function showQuestion() {
   }
 }
 
+// see if selected answer is correct
 function checkAnswer(selectedButton) {
   console.log(questions[currentQuestion].answer)
   console.log(selectedButton.innerText)
@@ -150,6 +150,7 @@ function checkAnswer(selectedButton) {
   }
 }
 
+// game is over
 function endGame() {
   questionElement.innerText = "Game Over! You scored " + score + " out of " + questions.length + " points." + " \n ";
   optionsContainer.innerHTML = "";

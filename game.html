@@ -2,7 +2,7 @@
 <html lang="en">
 <meta charset="UTF-8">
 
-
+  <!-- header -->
   <head>
     <title>World of Tea</title>
     <link rel="stylesheet" href="./css/style.css" />
@@ -27,26 +27,27 @@
       </div>
     </nav>
 
+    <!-- container for main content - game -->
     <div class="content">
       <hr>
         <div class="game-container">
             <h2>Tea Trivia Game</h2>
             <p id="question">question</p>
             <img id="question-image" src="img/matcha2.png" alt="image of japanese matcha tea, served traditionally during a ceremony.">
+            <!-- container for answer options -->
             <div id="options-container">
               <button class="option" onclick="checkAnswer(this)" id="op1">answer1</button>
-              <!-- <button class="option" onclick="" id="op1">answer1</button> -->
               <button class="option" onclick="checkAnswer(this)" id="op2">answer2</button>
               <button class="option" onclick="checkAnswer(this)" id="op3">answer3</button>
               <button class="option" onclick="checkAnswer(this)" id="op4">answer4</button>
             </div>
             <p id="score"></p>
             <button id="reset" class="game-button" onclick="resetGame()">Start Over</button>
-            <!-- <button id="reset" onclick="window.location.reload();">Start Over</button> -->
         </div>
         <br>
     </div>
 
+    <!-- container for footer -->
     <footer>
         <hr>
         <div id="bottom_bar">
@@ -59,6 +60,7 @@
     </footer>
       
 
+      <!-- my game js has to go here -->
       <script type="text/javascript" src="./js/game.js"></script>
 
   </body>

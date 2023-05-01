@@ -15,6 +15,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+// dictionary of countries and their detailed tea info
 const teaInfo = {
   "Colombia": {
     "title": "Colombian Tea",
@@ -242,8 +243,8 @@ var greenIcon = new L.icon({
 
 var selectedCountry = "Brazil";
 
-
-for (var i = 0; i < points.length; i++) { // create each location marker
+// create each location marker 
+for (var i = 0; i < points.length; i++) { 
   let name = points[i][0]
   let p = L.marker([points[i][1], points[i][2]], {icon: greenIcon,// add alt text to the image
   alt: 'Map overlay image'}).bindPopup(name)
@@ -270,7 +271,6 @@ function _markerOnClick(title) {
 }
 
 // make the tabs interactive too
-
 const overviewTab = document.getElementById("overview");
 const historyTab = document.getElementById("history");
 const cultureTab = document.getElementById("culture");
@@ -298,14 +298,14 @@ const legend = L.control({
   position: "bottomleft",
 });
 
-// we create a div with a legend class
+// create a div with a legend class
 const div = L.DomUtil.create("div", "legend");
 // color table
 const color = ["#681f1f", "#354c0e", "#568308", "#d0d066"];
 // table of texts that will appear in the popup and legend
 const label = ["Black Tea", "Oolong", "Green Tea", "White Tea"];
 
-// we add records to the L.control method
+// add records to the L.control method
 const rows = [];
 legend.onAdd = function () {
   color.map((item, index) => {
@@ -392,22 +392,4 @@ map.on("zoomend", function () {
 });
 
 
-  //   color_markers.map((marker, index) => {
-  //     const lat = marker[0];
-  //     const lng = marker[1];
-  //     L.marker([lat, lng], {
-  //       icon: colorMarker(color[index]),
-  //     })
-  //       .bindPopup(`color: #${color[index]}<br>${label[index]}`)
-  //   colorMarkerLayer.addLayer(L.marker);
-  //   });
-  //   map.on('zoomend', function() {
-  //     if (map.getZoom() <2){
-  //             map.removeLayer(colorMarkerLayer);
-  //     }
-  //     else {
-  //             map.addLayer(colorMarkerLayer);
-  //         }
-  // });
-
-
+ 

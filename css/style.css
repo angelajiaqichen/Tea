@@ -19,7 +19,8 @@ hr {
   margin-bottom: 25px;
   border: 0.5px solid #696929;
 }
-  
+
+/* navigation bar */
 nav {
   display: flex;
   justify-content: space-between;
@@ -27,7 +28,6 @@ nav {
   color: #7F7F1E;
   padding: 0 10%;
   padding-top: 30px;
-  /* border-bottom: 1px solid #696929; */
   font-size: 16px;
 }
   
@@ -58,6 +58,7 @@ nav li a {
   text-decoration: none;
 }
 
+/* landing page styles */
 #landing_h1 {
   font-size: 80px;
   font-weight: bold;
@@ -68,11 +69,6 @@ nav li a {
   font-size: 28px;
   line-height: 1.5;
 }
-/* 
-#landing_nav ul{
-  text-align: center;
-  align-items: center;
-} */
 
 #landing_nav li{
   font-size: 32px;
@@ -83,16 +79,15 @@ nav li a {
   text-decoration: underline;
 }
 
+/* content body styles */
 .content {
   width: 80%;
   margin: 3% auto;
   margin-bottom: 0;
   color: #343414;
-  /* min-height: 620px; */
 }
 
 .highlight {
-	/* color: #7F7F1E; */
   text-decoration: underline;
 }
 
@@ -119,10 +114,8 @@ h1 {
   margin: auto;
 }
 
+/* info container styles */
 #info {
-  /* position: absolute;
-  bottom: 10px;
-  left: 10px; */
   padding-top: 30px;
   width: 80%;
   margin: auto;
@@ -160,7 +153,6 @@ h1 {
   display: block;
   padding: 5px 10px;
   color: #343414;
-  /* text-decoration: none; */
   border-radius: 5px;
 }
 
@@ -203,8 +195,9 @@ h1 {
   margin: 15px 10px; 
 }
 
+/* footer styles */
+
 #bottom_bar {
-  /* position: fixed; */
   bottom: 0;
   left: 0;
   width: 100%;
@@ -239,8 +232,8 @@ h1 {
   background-color: #ebf0c9;
 }
 
+/* contact form styles */
 form {
-  /* background-color: #FFFFCC; */
   width: 80%;
   margin: auto;
   padding: 20px;
@@ -287,7 +280,7 @@ address {
 }
 
 
-/* map legend */
+/* map legend styles */
 .legend {
   background-color: #fff;
   border-radius: 5px;
