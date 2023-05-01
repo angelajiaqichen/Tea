@@ -252,7 +252,7 @@ for (var i = 0; i < points.length; i++) { // create each location marker
 
 
 // add a click event listener to the markers
-// REFERENCE: http://jsfiddle.net/ve2huzxw/74/, 
+// REFERENCE: (modified from) http://jsfiddle.net/ve2huzxw/74/, 
 // https://gis.stackexchange.com/questions/172508/add-an-event-listener-on-a-marker-in-leaflet
 // https://tomickigrzegorz.github.io/leaflet-examples/#05.coordinates-after-clicking-on-the-map
 
@@ -288,3 +288,107 @@ tabs.forEach(tab => {
     document.getElementById("info_detail").innerHTML = myInfo[selectedSection.id];
   });
 });
+
+
+// LEGENDS
+
+// the control element is placed in the bottom right corner
+const legend = L.control({
+  position: "bottomleft",
+});
+
+// we create a div with a legend class
+const div = L.DomUtil.create("div", "legend");
+// color table
+const color = ["#681f1f", "#354c0e", "#568308", "#d0d066", "#ae6414", "#aea914"];
+// table of texts that will appear in the popup and legend
+const label = ["Black Tea", "Oolong", "Green Tea", "White Tea", "Rooibos", "Yerba Mate"];
+
+// we add records to the L.control method
+const rows = [];
+legend.onAdd = function () {
+  color.map((item, index) => {
+    rows.push(`
+        <div class="row">
+          <i style="background: ${item}"></i>${label[index]}
+        </div>  
+    `);
+  });
+  div.innerHTML = rows.join("");
+  return div;
+};
+
+// adding a legend to the map
+legend.addTo(map);
+
+// MARKERS FOR TEA TYPE
+const color_markers = [
+  [35.86, 104.16],
+  [52.258071, 20.986805],
+  [52.242728, 21.041565],
+  [52.234213, 21.029034],
+  [52.251661, 21.003456],
+];
+
+// the function creates colorful svg
+function colorMarker(color) {
+  const svgTemplate = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="marker">
+      <path fill-opacity=".25" d="M16 32s1.427-9.585 3.761-12.025c4.595-4.805 8.685-.99 8.685-.99s4.044 3.964-.526 8.743C25.514 30.245 16 32 16 32z"/>
+      <path stroke="#fff" fill="${color}" d="M15.938 32S6 17.938 6 11.938C6 .125 15.938 0 15.938 0S26 .125 26 11.875C26 18.062 15.938 32 15.938 32zM16 6a4 4 0 100 8 4 4 0 000-8z"/>
+    </svg>`;
+
+  const icon = L.divIcon({
+    className: "marker",
+    html: svgTemplate,
+    iconSize: [40, 40],
+    iconAnchor: [12, 24],
+    popupAnchor: [7, -16]
+  });
+
+  return icon;
+}
+
+// add color_markers to the map
+map.on("zoomend", function () {
+  const zoomLevel = map.getZoom();
+  console.log(zoomLevel)
+  if (zoomLevel > 2) {
+    color_markers.map((marker, index) => {
+      const lat = marker[0];
+      const lng = marker[1];
+      L.marker([lat, lng], {
+        icon: colorMarker(color[index]),
+      })
+        .bindPopup(`color: #${color[index]}<br>${label[index]}`)
+        .addTo(map);
+    });
+  // } else {
+  //   console.log("not zoomed")
+  //   color_markers.forEach((c_marker) => {
+  //     c_marker.remove();
+  //   });
+
+  }
+});
+
+
+// const c_markers = color_markers.map((item, index) => {
+//   const c_marker = colorMarker(color[index]).setLatLng(item);
+//   return c_marker;
+// });
+
+// // add markers to the map when zoomed in
+// map.on("zoomend", function () {
+//   const zoomLevel = map.getZoom();
+//   console.log(zoomLevel)
+//   if (zoomLevel > 3) {
+//     c_markers.forEach((c_marker) => {
+//       c_marker.addTo(map);
+//     });
+//   } else {
+//     c_markers.forEach((c_marker) => {
+//       c_marker.remove();
+//     });
+//   }
+// });

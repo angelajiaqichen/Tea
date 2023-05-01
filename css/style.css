@@ -288,3 +288,26 @@ address {
   padding: 6px 10px;
 }
 
+
+/* map legend */
+.legend {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 14px;
+  opacity: 0.5
+}
+
+.legend .row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.legend i {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+}
