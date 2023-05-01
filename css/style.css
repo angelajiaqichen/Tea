@@ -159,7 +159,7 @@ h1 {
 .info_tabs ul li a {
   display: block;
   padding: 5px 10px;
-  color: #696929;
+  color: #343414;
   /* text-decoration: none; */
   border-radius: 5px;
 }
@@ -170,13 +170,13 @@ h1 {
 
 /* only change the font color of the active/selected tab when it is clicked or visited */
 .info_tabs li a:active {
-  color: #7F7F1E;
+  color: #4C4C1E;
   text-decoration: underline;
 }
 
 /* change the color of the default/initially selected tab */
 .info_tabs li.active_tab a {
-  color: #7F7F1E;
+  color: #4C4C1E;
   text-decoration: underline;
 }
 
