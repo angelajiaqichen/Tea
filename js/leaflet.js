@@ -300,9 +300,9 @@ const legend = L.control({
 // we create a div with a legend class
 const div = L.DomUtil.create("div", "legend");
 // color table
-const color = ["#681f1f", "#354c0e", "#568308", "#d0d066", "#ae6414", "#aea914"];
+const color = ["#681f1f", "#354c0e", "#568308", "#d0d066"];
 // table of texts that will appear in the popup and legend
-const label = ["Black Tea", "Oolong", "Green Tea", "White Tea", "Rooibos", "Yerba Mate"];
+const label = ["Black Tea", "Oolong", "Green Tea", "White Tea"];
 
 // we add records to the L.control method
 const rows = [];
@@ -322,6 +322,7 @@ legend.onAdd = function () {
 legend.addTo(map);
 
 // MARKERS FOR TEA TYPE
+const colorMarkerLayer = L.layerGroup();
 const color_markers = [
   [35.86, 104.16],
   [52.258071, 20.986805],
@@ -341,7 +342,7 @@ function colorMarker(color) {
   const icon = L.divIcon({
     className: "marker",
     html: svgTemplate,
-    iconSize: [40, 40],
+    iconSize: [20, 20],
     iconAnchor: [12, 24],
     popupAnchor: [7, -16]
   });
@@ -353,42 +354,37 @@ function colorMarker(color) {
 map.on("zoomend", function () {
   const zoomLevel = map.getZoom();
   console.log(zoomLevel)
-  if (zoomLevel > 2) {
+  // if (zoomLevel > 2) {
     color_markers.map((marker, index) => {
       const lat = marker[0];
       const lng = marker[1];
-      L.marker([lat, lng], {
-        icon: colorMarker(color[index]),
-      })
-        .bindPopup(`color: #${color[index]}<br>${label[index]}`)
-        .addTo(map);
+      if (zoomLevel > 2) {
+        L.marker([lat, lng], {
+          icon: colorMarker(color[index]),
+        })
+          .bindPopup(`${label[index]}`)
+          .addTo(map);
+      }
     });
-  // } else {
-  //   console.log("not zoomed")
-  //   color_markers.forEach((c_marker) => {
-  //     c_marker.remove();
-  //   });
-
-  }
 });
 
 
-// const c_markers = color_markers.map((item, index) => {
-//   const c_marker = colorMarker(color[index]).setLatLng(item);
-//   return c_marker;
-// });
+  //   color_markers.map((marker, index) => {
+  //     const lat = marker[0];
+  //     const lng = marker[1];
+  //     L.marker([lat, lng], {
+  //       icon: colorMarker(color[index]),
+  //     })
+  //       .bindPopup(`color: #${color[index]}<br>${label[index]}`)
+  //   colorMarkerLayer.addLayer(L.marker);
+  //   });
+  //   map.on('zoomend', function() {
+  //     if (map.getZoom() <2){
+  //             map.removeLayer(colorMarkerLayer);
+  //     }
+  //     else {
+  //             map.addLayer(colorMarkerLayer);
+  //         }
+  // });
 
-// // add markers to the map when zoomed in
-// map.on("zoomend", function () {
-//   const zoomLevel = map.getZoom();
-//   console.log(zoomLevel)
-//   if (zoomLevel > 3) {
-//     c_markers.forEach((c_marker) => {
-//       c_marker.addTo(map);
-//     });
-//   } else {
-//     c_markers.forEach((c_marker) => {
-//       c_marker.remove();
-//     });
-//   }
-// });
+
