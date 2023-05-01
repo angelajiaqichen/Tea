@@ -232,7 +232,7 @@ var greenIcon = new L.icon({
 // create an empty layer group
 var markers = L.layerGroup().addTo(map);
 
-var selectedCountry = undefined;
+var selectedCountry = "Brazil";
 
 
 for (var i = 0; i < points.length; i++) { // create each location marker
@@ -243,7 +243,7 @@ for (var i = 0; i < points.length; i++) { // create each location marker
 }
 
 
-// // add a click event listener to the markers
+// add a click event listener to the markers
 // REFERENCE: http://jsfiddle.net/ve2huzxw/74/, 
 // https://gis.stackexchange.com/questions/172508/add-an-event-listener-on-a-marker-in-leaflet
 // https://tomickigrzegorz.github.io/leaflet-examples/#05.coordinates-after-clicking-on-the-map
@@ -252,35 +252,31 @@ function _markerOnClick(title) {
   console.log("Clicked on marker: ", title);
   selectedCountry = title
 
-  // updatedata()
-
-  // access city info in dict
   const myInfo = teaInfo[selectedCountry]
 
-  // var country_title = myInfo.title
-  // console.log(country_title)
   document.getElementById("info_detail").innerHTML = myInfo.overview;
   document.getElementById("info_title").innerText = myInfo.title;
   document.getElementById("info_image").src = myInfo.teaser_photo;
-  console.log(myInfo.teaser_photo)
+
 }
 
+// make the tabs interactive too
 
-// // Add a GeoJSON layer to the map
-// const geojsonLayer = L.geoJSON(worldGeoJSON).addTo(map);
+const overviewTab = document.getElementById("overview");
+const historyTab = document.getElementById("history");
+const cultureTab = document.getElementById("culture");
+const teaTypesTab = document.getElementById("types");
 
-// // Add a click event listener to the GeoJSON layer
-// geojsonLayer.on("click", function (e) {
-//   const name = e.layer.feature.properties.name;
-//   document.getElementById("info").innerHTML = "<h2>" + name + "</h2>";
-// });
-
-// // Load the world GeoJSON data
-// fetch("world-110m.geojson")
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     // Add the GeoJSON data to the GeoJSON layer
-//     geojsonLayer.addData(data);
-//   });
+const tabs = document.querySelectorAll(".info_tabs ul li a");
+// console.log(tabs)
+tabs.forEach(tab => {
+  tab.addEventListener("click", (event) => {
+    event.preventDefault();
+    const selectedTab = event.target;
+    // console.log(selectedTab)
+    const selectedSection = document.querySelector(selectedTab.hash);
+    // console.log(selectedSection.id)
+    const myInfo = teaInfo[selectedCountry];
+    document.getElementById("info_detail").innerHTML = myInfo[selectedSection.id];
+  });
+});
