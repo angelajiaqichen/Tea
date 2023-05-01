@@ -354,7 +354,8 @@ function colorMarker(color) {
     html: svgTemplate,
     iconSize: [25, 25],
     iconAnchor: [12, 24],
-    popupAnchor: [7, -16]
+    popupAnchor: [7, -16],
+    alt: 'Marker icon for location'
   });
 
   return icon;
