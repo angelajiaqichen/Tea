@@ -76,12 +76,6 @@ h1 {
   color: #929239;
 }
 
-.tiny_text {
-  color: #343414;
-  /* padding-bottom: 15px; */
-  font-size: 14px;
-}
-
 #map-container {
   position: relative;
   /* width: 80%; */
