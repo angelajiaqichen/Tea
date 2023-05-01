@@ -57,6 +57,30 @@ nav li a {
   text-decoration: none;
 }
 
+#landing_h1 {
+  font-size: 80px;
+  line-height: 1.5;
+}
+
+#landing_p {
+  font-size: 28px;
+  line-height: 1.5;
+}
+/* 
+#landing_nav ul{
+  text-align: center;
+  align-items: center;
+} */
+
+#landing_nav li{
+  font-size: 32px;
+  line-height: 1.5;
+  margin-right: 180px;
+  text-align: center;
+  color: #929239;
+  text-decoration: underline;
+}
+
 .content {
   width: 80%;
   margin: 3% auto;
