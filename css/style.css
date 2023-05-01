@@ -24,7 +24,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #929239;
+  color: #7F7F1E;
   padding: 0 10%;
   padding-top: 30px;
   /* border-bottom: 1px solid #696929; */
@@ -38,7 +38,7 @@ nav h1 {
 }
 
 nav a {
-  color: #929239;
+  color: #7F7F1E;
   text-decoration: none; /* Set text decoration to none for the link */
 }
 
@@ -79,7 +79,7 @@ nav li a {
   line-height: 1.5;
   margin-right: 180px;
   text-align: center;
-  color: #929239;
+  color: #7F7F1E;
   text-decoration: underline;
 }
 
@@ -92,7 +92,7 @@ nav li a {
 }
 
 .highlight {
-	color: #929239;
+	color: #7F7F1E;
   text-decoration: underline;
 }
 
@@ -170,13 +170,13 @@ h1 {
 
 /* only change the font color of the active/selected tab when it is clicked or visited */
 .info_tabs li a:active {
-  color: #929239;
+  color: #7F7F1E;
   text-decoration: underline;
 }
 
 /* change the color of the default/initially selected tab */
 .info_tabs li.active_tab a {
-  color: #929239;
+  color: #7F7F1E;
   text-decoration: underline;
 }
 
